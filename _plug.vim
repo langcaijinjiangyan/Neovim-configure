@@ -1,7 +1,7 @@
 scripte utf-8
 call plug#begin('~/.config/nvim/plugged')
 " 大YCM
-" Plug 'Valloric/YouCompleteMe' , { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe' , { 'do': './install.py --clang-completer' }
 " 快速缩进
 " Plug 'junegunn/vim-easy-align'
 " 文件检索
@@ -49,7 +49,7 @@ Plug 'scrooloose/nerdtree'
 " Undo树
 Plug 'mbbill/undotree'
 " 高亮行尾空白
-Plug 'bronson/vim-trailing-whitespace'
+"Plug 'bronson/vim-trailing-whitespace'
 " 打开网页
 Plug '~/.config/nvim/w-vim/open_url'
 Plug 'tyru/open-browser.vim'

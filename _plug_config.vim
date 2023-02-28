@@ -5,11 +5,11 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1 " 注释与字符串
 let g:syntastic_ignore_files=['.*\.py$']
 let g:ycm_seed_identifiers_with_syntax = 1                  " 语法关键字补全
 " let g:ycm_confirm_extra_conf = 0
-let g:ycm_key_list_select_completion = ['<C-n>']  " 映射按键, 没有这个会拦截掉tab 导致其他插件的tab不能用.
+" let g:ycm_key_list_select_completion = ['<C-n>']  " 映射按键, 没有这个会拦截掉tab 导致其他插件的tab不能用.
 let g:ycm_key_list_previous_completion = ['<C-p>']
 let g:ycm_complete_in_comments = 1                          " 在注释输入中也能补全
 let g:ycm_complete_in_strings = 1                           " 在字符串输入中也能补全
-let g:ycm_show_diagnostics_ui = 0                           " 禁用语法检查
+let g:ycm_show_diagnostics_ui = 0                          " 禁用语法检查
 " let g:ycm_show_diagnostics_ui = 1    " 仅对C-family有效
 " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>" |           " 回车即选中当前项
 nnoremap <C-j> <Cmd>YcmCompleter GoToDefinitionElseDeclaration<CR>|     " 跳转到定义处
@@ -26,8 +26,9 @@ nnoremap <leader>gf <Cmd>YcmCompleter GoToDefinition<CR>
 nnoremap <F4> <Cmd>YcmDiags<CR>
 " inoremap <c-o> <c-x><c-o>
 let g:ycm_semantic_triggers = {
+\     'cpp': ['re!\w{2}'],
 \     'c' : ['->', '  ', '.', ' ', '(', '[', '&'],
-\     'cpp,objcpp' : ['->', '.', ' ', '(', '[', '&', '::'],
+"\     'cpp,objcpp' : ['->', '.', ' ', '(', '[', '&', '::'],
 \     'perl' : ['->', '::', ' '],
 \     'php' : ['->', '::', '.'],
 \     'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],

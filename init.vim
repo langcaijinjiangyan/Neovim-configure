@@ -1,3 +1,7 @@
+" 自欺欺人 否则YCM会报错
+if has('python3')
+  silent! python3 1
+endif
 set nu
 inore ww <esc>
 scripte utf-8
@@ -105,7 +109,7 @@ nnoremap <C-h> <Cmd>bp<CR>
 nnoremap <Leader>w <Cmd>up<CR>
 nnoremap <Leader><Space>w <Cmd>w<CR>
 nnoremap <Tab> <C-w>
-nnoremap <Tab>q <C-w>q
+nnoremap <Tab>q :qa<cr>
 nnoremap <Tab><Tab> <Tab>
 nnoremap <Leader>bo <Cmd>botright copen 8 <CR>
 nnoremap <Leader>e <Cmd>edit<CR>
@@ -165,8 +169,9 @@ map! ;p <esc>:read !/mnt/c/Windows/System32/paste.exe <cr>i<bs><esc>l
 nnoremap ` '
 nnoremap ' `
 " 一键打题模式
-nnoremap <Leader>o <Cmd>vs %:r.log<CR><Cmd>sp %:r.out<CR><Cmd>sp %:r.in<CR><C-w>l<C-w>H<C-w>=
-nnoremap <Leader>O <Cmd>vs log<CR><Cmd>sp out<CR><Cmd>sp in<CR><C-w>l<C-w>H<C-w>=
+nnoremap <Leader>O <Cmd>vs %:r.log<CR><Cmd>sp %:r.out<CR><Cmd>sp %:r.in<CR><C-w>l<C-w>H<C-w>=
+nnoremap <Leader>o <Cmd>vs log<CR><Cmd>sp out<CR><Cmd>sp in<CR><C-w>l<C-w>H<C-w>=
+
 " 其他
 " :help Y 查看真相，就是不与 Vi 兼容
 nnoremap Y y$
@@ -252,4 +257,34 @@ autocmd BufNewFile gen.sh exec ":call Gen_sh_Init()"
 autocmd BufNewFile *.cpp exec ":call Init_cpp()"
 autocmd BufNewFile * normal G
 nnoremap <Leader>mpi :exec ":call MPI_cpp_Init()" <cr>
+"+ }}}
+" {{{ 一键编译运行
+map <F5> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+	exec "w"
+	if &filetype == 'c'
+		exec '!g++ % -o %< -Wall'
+		exec '!./%<'
+	elseif &filetype == 'cpp'
+		exec '!g++ % -g -D lzk -std=c++17 -Wall -o %<'
+		exec '!./%<'
+	elseif &filetype == 'python'
+		exec '!python %'
+	elseif &filetype == 'sh'
+		:!sh %
+	endif
+endfunc
+map <F10> :call RunGcc()<CR>
+func! RunGcc()
+	exec "w"
+	if &filetype == 'c'
+		exec '!./%<'
+	elseif &filetype == 'cpp'
+		exec '!./%<'
+	elseif &filetype == 'python'
+		exec '!python %'
+	elseif &filetype == 'sh'
+		:!sh %
+	endif
+endfunc
 " }}}
