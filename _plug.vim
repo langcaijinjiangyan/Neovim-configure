@@ -44,6 +44,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Plug 'suan/vim-instant-markdown'
 " 配色
 Plug 'altercation/vim-colors-solarized'
+Plug 'hzchirs/vim-material'
 " 目录结构
 Plug 'scrooloose/nerdtree'
 " Undo树

@@ -1,8 +1,3 @@
-" 自欺欺人 否则YCM会报错
-if has('python3')
-  silent! python3 1
-endif
-set nu
 inore ww <esc>
 scripte utf-8
 source ~/.config/nvim/config.vim
@@ -19,7 +14,7 @@ source ~/.config/nvim/_plug_config.vim
 " 语法高亮
 syntax on
 " 显示行号
-" set number
+set number
 " 相对行号
 " set relativenumber
 " 高亮当前行
@@ -85,13 +80,15 @@ set wildmenu
 " }}}
 " color {{{
 syntax enable
-let g:solarized_termcolors=256
-if exists('g:k_nv_light')
-	set background=light
-else
-	set background=dark
-endif
-colorscheme solarized
+"let g:solarized_termcolors=256
+"
+" Palenight
+"let g:material_style='palenight'
+"
+set background=dark
+" let vim performs like gvim
+set termguicolors
+colorscheme vim-material
 " }}}
 " 开关折叠 {{{
 set foldenable
@@ -170,7 +167,7 @@ nnoremap ` '
 nnoremap ' `
 " 一键打题模式
 nnoremap <Leader>O <Cmd>vs %:r.log<CR><Cmd>sp %:r.out<CR><Cmd>sp %:r.in<CR><C-w>l<C-w>H<C-w>=
-nnoremap <Leader>o <Cmd>vs log<CR><Cmd>sp out<CR><Cmd>sp in<CR><C-w>l<C-w>H<C-w>=
+nnoremap <Leader>o <Cmd>vs log<CR><Cmd>sp out<CR><Cmd>sp in<CR><C-w>l<C-w>H<C-w>= <Cmd>vert res +30<CR>
 
 " 其他
 " :help Y 查看真相，就是不与 Vi 兼容

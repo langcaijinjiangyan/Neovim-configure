@@ -20,9 +20,14 @@ inline int read(){
 }
 //}}}
 int main(){
+	//{{{ IO_pre
 #ifdef lzk
-	freopen("1.in","r",stdin);
-	freopen("1.out","w",stdout);
+	freopen("in","r",stdin);
+	freopen("out","w",stdout);
+	freopen("log","w",stderr);
 #endif
+	//std::ios::sync_with_stdio(false);
+    //std::cin.tie(0);
+	//}}}
 	return 0;
 }

@@ -1,1 +1,1 @@
-let g:k_nv_home = '/home/kewth/.config/nvim'
+let g:k_nv_home = '/home/harold/.config/nvim'

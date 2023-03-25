@@ -78,6 +78,7 @@ let Powerline_symbols='fancy'
 let g:bufferline_echo=0  
 set t_Co=256  
 set helplang=cn
+let g:airline_theme='material'
 " 更换主题  
 function! Airline_Change_Theme()
 	if g:airline_theme ==? 'light'
