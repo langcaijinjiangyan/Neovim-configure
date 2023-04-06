@@ -260,7 +260,7 @@ map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
-		exec '!g++ % -o %< -Wall'
+		exec '!g++ % -o %< -Wall -O3'
 		exec '!./%<'
 	elseif &filetype == 'cpp'
 		exec '!g++ % -g -D lzk -std=c++17 -Wall -o %<'

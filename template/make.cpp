@@ -21,7 +21,9 @@ inline int read(){
 }
 //}}}
 int main(){
+#ifdef lzk
 	freopen("1.in","w",stdout);
+#endif
 	srand(time(0));
 	return 0;
 }
