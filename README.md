@@ -54,8 +54,8 @@ Then Download Neovim(this is the 0.3.2 version of Neovim):
 After that, you should clone this source code to your configuration directory.  
 For example, if the operating system you use is Linux, just run:  
 ```
-git clone git@github.com:Kewth/K-Neovimrc
-mv K-Neovimrc ~/.config/nvim
+git clone git@github.com:langcaijinjiangyan/Neovim-configure.git
+mv Neovim-configure ~/.config/nvim
 vim
 :PlugInstall
 ```
